@@ -1,0 +1,7 @@
+# 静态 TF 可能在录制器或网关启动前就已发布，必须允许晚加入者接收保留消息。
+# 同一配置用于录制和回放，不改变三路传感器原有的 QoS 自动匹配。
+/tf_static:
+    history: keep_last
+    depth: 100
+    reliability: reliable
+    durability: transient_local

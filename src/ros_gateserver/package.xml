@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ros_gateserver</name>
+  <version>0.1.0</version>
+  <description>ROS 2 sensor status gateway with WebSocket and gRPC outputs.</description>
+  <maintainer email="maintainer@example.com">ros_gateserver maintainers</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <build_depend>protobuf-compiler-grpc</build_depend>
+  <depend>protobuf-dev</depend>
+  <depend>libgrpc</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>ros_gateserver_interfaces</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>boost</depend>
+  <depend>nlohmann-json-dev</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>libopencv-dev</depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>rmw_cyclonedds_cpp</exec_depend>
+  <exec_depend>ros2bag</exec_depend>
+  <exec_depend>rosbag2_py</exec_depend>
+  <exec_depend>rosbag2_storage_mcap</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>python3-protobuf</exec_depend>
+  <exec_depend>python3-grpcio</exec_depend>
+  <exec_depend>tf2_msgs</exec_depend>
+  <test_depend>rclpy</test_depend>
+  <test_depend>action_msgs</test_depend>
+  <test_depend>rosgraph_msgs</test_depend>
+  <test_depend>rosidl_runtime_py</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

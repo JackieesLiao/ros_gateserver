@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package ros_gateserver.protocol;
+
+service GatewayStatusService
+{
+    // Sends the current status and subsequent snapshots while the stream is open.
+    rpc WatchStatus(WatchStatusRequest) returns (stream GatewayStatus);
+}
+
+message WatchStatusRequest
+{
+}
+
+// 字段编号属于线上协议；后续扩展只能增加字段，不能复用已有编号。
+message GatewayStatus
+{
+    uint32 schema_version = 1;
+    bool enabled = 2;
+    int64 stamp_ns = 3;
+    SensorStatus image = 4;
+    SensorStatus scan = 5;
+    SensorStatus odom = 6;
+    ClockStatus clock = 7;
+    optional uint64 sequence = 8;
+}
+
+message ClockStatus
+{
+    string source = 1;
+    bool initialized = 2;
+    uint64 epoch = 3;
+}
+
+message SensorStatus
+{
+    uint64 received = 1;
+    bool fresh = 2;
+    optional double age_sec = 3;
+    // 未收到数据或转发关闭时不设置 data，区别于有效的零值。
+    oneof data
+    {
+        ImageData image_data = 4;
+        ScanData scan_data = 5;
+        OdometryData odom_data = 6;
+    }
+    InputDiagnostics diagnostics = 7;
+}
+
+message InputDiagnostics
+{
+    string state = 1;
+    string topic = 2;
+    string reliability = 3;
+    uint64 publishers = 4;
+    uint64 compatible_publishers = 5;
+    uint64 incompatible_publishers = 6;
+    uint64 uncertain_publishers = 7;
+    uint64 type_mismatches = 8;
+    uint64 incompatible_events = 9;
+    string last_policy = 10;
+    bool event_supported = 11;
+    optional double receive_hz = 12;
+    repeated string reasons = 13;
+    string graph_error = 14;
+}
+
+message Stamp
+{
+    int32 sec = 1;
+    uint32 nanosec = 2;
+}
+
+message Vector3
+{
+    optional double x = 1;
+    optional double y = 2;
+    optional double z = 3;
+}
+
+message Quaternion
+{
+    optional double x = 1;
+    optional double y = 2;
+    optional double z = 3;
+    optional double w = 4;
+}
+
+message Point
+{
+    string frame_id = 1;
+    optional double x = 2;
+    optional double y = 3;
+    optional double z = 4;
+}
+
+message ImageData
+{
+    string frame_id = 1;
+    Stamp stamp = 2;
+    uint32 width = 3;
+    uint32 height = 4;
+    string encoding = 5;
+    uint64 byte_count = 6;
+    ImageQuality quality = 7;
+}
+
+message ImageQuality
+{
+    string status = 1;
+    string reason = 2;
+    uint32 analysis_width = 3;
+    uint32 analysis_height = 4;
+    optional double mean_brightness = 5;
+    optional double contrast_stddev = 6;
+    optional double laplacian_variance = 7;
+    repeated string flags = 8;
+}
+
+message ScanData
+{
+    string frame_id = 1;
+    Stamp stamp = 2;
+    uint64 samples = 3;
+    uint64 valid_samples = 4;
+    optional double nearest_m = 5;
+    Point nearest_point_sensor = 6;
+    Point nearest_point = 7;
+    string transform_status = 8;
+}
+
+message OdometryData
+{
+    string frame_id = 1;
+    Stamp stamp = 2;
+    string child_frame_id = 3;
+    Vector3 position = 4;
+    Quaternion orientation = 5;
+    optional double linear_x = 6;
+    optional double angular_z = 7;
+}

@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "name": "ROS 2 Jazzy",
+            "compilerPath": "/usr/bin/c++",
+            "intelliSenseMode": "linux-gcc-x64",
+            "cppStandard": "c++17",
+            "compileCommands": [
+                "${workspaceFolder}/build/ros_gateserver/compile_commands.json"
+            ],
+            "includePath": [
+                "${workspaceFolder}/src/ros_gateserver/include",
+                "/opt/ros/jazzy/include/rclcpp",
+                "/opt/ros/jazzy/include/sensor_msgs",
+                "/opt/ros/jazzy/include/nav_msgs",
+                "/opt/ros/jazzy/include/std_msgs",
+                "/opt/ros/jazzy/include/std_srvs",
+                "/opt/ros/jazzy/include/builtin_interfaces",
+                "/opt/ros/jazzy/include/rosidl_runtime_c",
+                "/opt/ros/jazzy/include/rcutils",
+                "/opt/ros/jazzy/include/rosidl_typesupport_interface",
+                "/opt/ros/jazzy/include/fastcdr",
+                "/opt/ros/jazzy/include/rosidl_runtime_cpp",
+                "/opt/ros/jazzy/include/rosidl_typesupport_fastrtps_cpp",
+                "/opt/ros/jazzy/include/rmw",
+                "/opt/ros/jazzy/include/rosidl_dynamic_typesupport",
+                "/opt/ros/jazzy/include/rosidl_typesupport_fastrtps_c",
+                "/opt/ros/jazzy/include/rosidl_typesupport_introspection_c",
+                "/opt/ros/jazzy/include/rosidl_typesupport_introspection_cpp",
+                "/opt/ros/jazzy/include/libstatistics_collector",
+                "/opt/ros/jazzy/include/rcl",
+                "/opt/ros/jazzy/include/rcl_interfaces",
+                "/opt/ros/jazzy/include/service_msgs",
+                "/opt/ros/jazzy/include/rcl_logging_interface",
+                "/opt/ros/jazzy/include/rcl_yaml_param_parser",
+                "/opt/ros/jazzy/include/type_description_interfaces",
+                "/opt/ros/jazzy/include/rcpputils",
+                "/opt/ros/jazzy/include/statistics_msgs",
+                "/opt/ros/jazzy/include/rosgraph_msgs",
+                "/opt/ros/jazzy/include/rosidl_typesupport_cpp",
+                "/opt/ros/jazzy/include/rosidl_typesupport_c",
+                "/opt/ros/jazzy/include/tracetools",
+                "/opt/ros/jazzy/include/geometry_msgs"
+            ]
+        }
+    ],
+    "version": 4
+}

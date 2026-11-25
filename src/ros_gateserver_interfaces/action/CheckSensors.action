@@ -1,0 +1,14 @@
+# 等到首份有效网关状态后，实际观察 1～60 秒；等待时间另行限制。
+float64 duration_sec
+bool require_scan_tf
+---
+# SUCCEEDED 表示检查执行完成；是否通过必须读取 passed。
+bool passed
+float64 observed_sec
+string message
+string[] failed_checks
+---
+string phase
+float32 progress
+string[] unhealthy_sensors
+string[] failed_checks

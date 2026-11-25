@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/src/ros_gateserver",
+    "cmake.configureOnOpen": false,
+    "C_Cpp.default.configurationProvider": "",
+    "C_Cpp.clang_format_style": "file"
+}

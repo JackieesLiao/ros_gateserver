@@ -1,0 +1,32 @@
+BasedOnStyle: LLVM
+
+# 基础格式
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+AccessModifierOffset: -4
+
+# 大括号独占一行（偏 Windows/MSVC 风格）
+BreakBeforeBraces: Allman
+
+# 禁止把函数和控制语句压成一行
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+InsertBraces: true
+
+# 长参数列表与调用
+BinPackArguments: false
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AlignAfterOpenBracket: DontAlign
+AlwaysBreakTemplateDeclarations: Yes
+PackConstructorInitializers: Never
+
+# 其他
+PointerAlignment: Left
+SortIncludes: CaseSensitive
